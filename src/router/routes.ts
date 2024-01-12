@@ -1,10 +1,22 @@
 import { RouteRecordRaw } from 'vue-router';
-
+import { authenticationGuard } from './routeGuard';
 const routes: RouteRecordRaw[] = [
   {
     path: '/',
     component: () => import('layouts/MainLayout.vue'),
-    children: [{ path: '', component: () => import('pages/IndexPage.vue') }],
+    children: [
+      { path: '', component: () => import('pages/IndexPage.vue') },
+      {
+        path: '/playback/:id',
+        component: () => import('pages/playBack.vue'),
+        meta: { requiresAuth: true },
+        beforeEnter: authenticationGuard,
+      },
+    ],
+  },
+  {
+    path: '/login',
+    component: () => import('pages/loginPage.vue'),
   },
 
   // Always leave this as last one,
