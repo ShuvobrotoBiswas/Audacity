@@ -12,10 +12,10 @@
         />
 
         <q-toolbar-title>
-          Quasar App
+          Audacity Video Zone
         </q-toolbar-title>
 
-        <div>Quasar v{{ $q.version }}</div>
+        <div>Shuvobroto</div>
       </q-toolbar>
     </q-header>
 

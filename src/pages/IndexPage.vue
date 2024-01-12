@@ -1,49 +1,83 @@
 <template>
-  <q-page class="row items-center justify-evenly">
-    <example-component
-      title="Example component"
-      active
-      :todos="todos"
-      :meta="meta"
-    ></example-component>
-  </q-page>
+  <div class="q-pa-md">
+    <div class="row">
+      <div class="col-12 col-md-4" v-for="tmp in videos" :key="tmp">
+        <div class="q-pa-sm">
+          <q-img :src="tmp.url" spinner-color="primary" spinner-size="82px">
+            <q-btn
+              flat
+              round
+              icon="play_circle_filled"
+              color="white"
+              size="40px"
+            />
+          </q-img>
+        </div>
+      </div>
+    </div>
+  </div>
 </template>
 
-<script lang="ts">
-import { Todo, Meta } from 'components/models';
-import ExampleComponent from 'components/ExampleComponent.vue';
-import { defineComponent, ref } from 'vue';
-
-export default defineComponent({
+<script>
+export default {
   name: 'IndexPage',
-  components: { ExampleComponent },
   setup() {
-    const todos = ref<Todo[]>([
-      {
-        id: 1,
-        content: 'ct1'
-      },
-      {
-        id: 2,
-        content: 'ct2'
-      },
-      {
-        id: 3,
-        content: 'ct3'
-      },
-      {
-        id: 4,
-        content: 'ct4'
-      },
-      {
-        id: 5,
-        content: 'ct5'
-      }
-    ]);
-    const meta = ref<Meta>({
-      totalCount: 1200
-    });
-    return { todos, meta };
-  }
-});
+    return {
+      videos: [
+        {
+          title: 'Video 1',
+          url: 'https://www.imgacademy.com/sites/default/files/styles/scale_1700w/public/2022-07/img-homepage-meta_0.jpg?itok=LMirU0Ik',
+        },
+        {
+          title: 'Video 2',
+          url: 'https://www.imgacademy.com/sites/default/files/styles/scale_1700w/public/2022-07/img-homepage-meta_0.jpg?itok=LMirU0Ik',
+        },
+        {
+          title: 'Video 3',
+          url: 'https://www.imgacademy.com/sites/default/files/styles/scale_1700w/public/2022-07/img-homepage-meta_0.jpg?itok=LMirU0Ik',
+        },
+        {
+          title: 'Video 4',
+          url: 'https://www.imgacademy.com/sites/default/files/styles/scale_1700w/public/2022-07/img-homepage-meta_0.jpg?itok=LMirU0Ik',
+        },
+        {
+          title: 'Video 5',
+          url: 'https://www.imgacademy.com/sites/default/files/styles/scale_1700w/public/2022-07/img-homepage-meta_0.jpg?itok=LMirU0Ik',
+        },
+        {
+          title: 'Video 6',
+          url: 'https://www.imgacademy.com/sites/default/files/styles/scale_1700w/public/2022-07/img-homepage-meta_0.jpg?itok=LMirU0Ik',
+        },
+        {
+          title: 'Video 7',
+          url: 'https://www.imgacademy.com/sites/default/files/styles/scale_1700w/public/2022-07/img-homepage-meta_0.jpg?itok=LMirU0Ik',
+        },
+        {
+          title: 'Video 8',
+          url: 'https://www.imgacademy.com/sites/default/files/styles/scale_1700w/public/2022-07/img-homepage-meta_0.jpg?itok=LMirU0Ik',
+        },
+        {
+          title: 'Video 9',
+          url: 'https://www.imgacademy.com/sites/default/files/styles/scale_1700w/public/2022-07/img-homepage-meta_0.jpg?itok=LMirU0Ik',
+        },
+        {
+          title: 'Video 10',
+          url: 'https://www.imgacademy.com/sites/default/files/styles/scale_1700w/public/2022-07/img-homepage-meta_0.jpg?itok=LMirU0Ik',
+        },
+      ],
+    };
+  },
+};
 </script>
+
+<style scoped>
+.play-icon {
+  font-size: 5em;
+  color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+}
+</style>
