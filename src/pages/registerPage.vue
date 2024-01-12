@@ -1,19 +1,23 @@
 <template>
-  <div class="login-container">
-    <div class="text-h6">Welcome Back Audacity!</div>
-    <form @submit.prevent="login">
+  <div class="register-container">
+    <div class="text-h6">Create an Account</div>
+    <form @submit.prevent="register">
       <div class="form-group">
         <label for="username">Username:</label>
         <input type="text" id="username" v-model="username" required />
       </div>
       <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email" v-model="email" required />
+      </div>
+      <div class="form-group">
         <label for="password">Password:</label>
         <input type="password" id="password" v-model="password" required />
       </div>
-      <button type="submit">Login</button>
+      <button type="submit">Register</button>
     </form>
-    <div class="register-link">
-      Don't have an account? <router-link to="/register">Register</router-link>
+    <div class="login-link">
+      Already have an account? <router-link to="/login">Login</router-link>
     </div>
   </div>
 </template>
@@ -23,25 +27,25 @@ export default {
   data() {
     return {
       username: '',
+      email: '',
       password: '',
     };
   },
   methods: {
-    login() {
-      const userCredentials = {
-        username: this.username,
-        password: this.password,
-      };
-      const lastQueue = localStorage.getItem('lastQueue');
-      localStorage.setItem('userCredentials', JSON.stringify(userCredentials));
-      this.$router.push(lastQueue);
+    register() {
+      console.log(
+        'Registering with:',
+        this.username,
+        this.email,
+        this.password
+      );
     },
   },
 };
 </script>
 
 <style scoped>
-.login-container {
+.register-container {
   max-width: 400px;
   margin: 50px auto;
   padding: 20px;
@@ -75,7 +79,7 @@ button {
   cursor: pointer;
 }
 
-.register-link {
+.login-link {
   margin-top: 20px;
 }
 </style>

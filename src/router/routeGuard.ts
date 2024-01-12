@@ -1,9 +1,7 @@
-// src/router/routeGuard.ts
-
 import { NavigationGuardNext, RouteLocationNormalized } from 'vue-router';
 
 const isAuthenticated = () => {
-  return !!localStorage.getItem('userToken');
+  return !!localStorage.getItem('userCredentials');
 };
 
 export const authenticationGuard: (

@@ -6,6 +6,7 @@
           <q-img :src="tmp.url" spinner-color="primary" spinner-size="82px" />
           <div class="playBtn">
             <q-btn
+              @click="handleWatchClick(tmp.playID)"
               :to="`/playback/${tmp.playID}`"
               flat
               round
@@ -24,7 +25,11 @@
 export default {
   name: 'IndexPage',
   setup() {
+    const handleWatchClick = (playID) => {
+      localStorage.setItem('lastQueue', `/playback/${playID}`);
+    };
     return {
+      handleWatchClick,
       videos: [
         {
           title: 'Video 1',
