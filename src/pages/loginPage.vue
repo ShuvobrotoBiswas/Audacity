@@ -44,7 +44,7 @@ export default {
       };
       const lastQueue = localStorage.getItem('lastQueue');
       localStorage.setItem('userCredentials', JSON.stringify(userCredentials));
-      this.$router.push(lastQueue);
+      this.$router.push(`/playback/${JSON.parse(lastQueue).playID}`);
     },
   },
 };

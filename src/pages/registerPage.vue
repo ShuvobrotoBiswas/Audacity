@@ -43,6 +43,7 @@ export default {
   },
   methods: {
     register() {
+      this.$router.push('/login');
       console.log(
         'Registering with:',
         this.username,
