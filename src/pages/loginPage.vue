@@ -11,6 +11,16 @@
         <input type="password" id="password" v-model="password" required />
       </div>
       <button type="submit">Login</button>
+      <div class="row flex-center q-py-md">OR Login With</div>
+      <div class="row flex-center">
+        <q-img
+          src="https://seeklogo.com/images/G/google-logo-28FA7991AF-seeklogo.com.png"
+          style="height: 40px; width: 40px"
+          spinner-color="primary"
+          spinner-size="82px"
+        />
+        <q-tooltip> Upcoming Features & Need Server </q-tooltip>
+      </div>
     </form>
     <div class="register-link">
       Don't have an account? <router-link to="/register">Register</router-link>

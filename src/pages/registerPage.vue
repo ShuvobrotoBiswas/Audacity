@@ -16,6 +16,16 @@
       </div>
       <button type="submit">Register</button>
     </form>
+    <div class="row flex-center q-py-md">OR Register With</div>
+    <div class="row flex-center">
+      <q-img
+        src="https://seeklogo.com/images/G/google-logo-28FA7991AF-seeklogo.com.png"
+        style="height: 40px; width: 40px"
+        spinner-color="primary"
+        spinner-size="82px"
+      />
+      <q-tooltip> Upcoming Features & Need Server </q-tooltip>
+    </div>
     <div class="login-link">
       Already have an account? <router-link to="/login">Login</router-link>
     </div>
